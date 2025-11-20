@@ -4,15 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <title>Document</title>
+    <title>Shipping Site</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="style.css" />
     <style type="text/tailwindcss">
       @theme {
-         --container-max-width: 1320px;
-        --container-padding-x: 1rem;
+          /* Consistent container settings are fine */
+          --container-max-width: 1320px;
+          --container-padding-x: 1rem;
       }
-       .container {
+      .container {
         max-width: var(--container-max-width);
         padding-left: var(--container-padding-x);
         padding-right: var(--container-padding-x);
@@ -20,146 +21,172 @@
         margin-right: auto;
       }
       .btn1{
-       @apply  py-3 px-7 text-white bg-[#89CE14] border-[1px] border-transparent ease-in-out duration-500 rounded-3xl border-2 hover:border-[#89CE14] hover:text-[#89CE14] hover:bg-transparent cursor-pointer text-base font-semibold;
+        @apply py-3 px-7 text-white bg-[#89CE14] border-[1px] border-transparent ease-in-out duration-500 rounded-3xl border-2 hover:border-[#89CE14] hover:text-[#89CE14] hover:bg-transparent cursor-pointer text-base font-semibold;
+      }
+      /* Custom utility for the responsive Hamburger menu toggle on mobile */
+      .nav-menu {
+        @apply hidden md:flex space-x-8 text-white font-medium;
+      }
+      .nav-buttons {
+        @apply hidden md:flex gap-3;
+      }
+      .mobile-menu-icon {
+        @apply md:hidden text-white text-2xl;
       }
     </style>
-    
   </head>
   <body>
-     <!-- ===== Navbar Section ===== -->
-    <section
-      class="w-full min-h-screen bg-[url('assets/image/image.png')] bg-cover bg-center"
-    >
-      <nav class="bg-black/40 py-4">
-        <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
-          <!-- Logo -->
-          <img
-            src="assets/image/plen.svg"
-            alt="Logo"
-            class="w-[100px] h-auto"
-          />
+<section
+  class="w-full min-h-screen bg-[url('assets/image/image.png')] bg-cover bg-center"
+>
+  <nav class="hidden md:block bg-black/40 py-4">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+      <img
+        src="assets/image/plen.svg"
+        alt="Logo"
+        class="w-[100px] h-auto"
+      />
 
-          <!-- Menu Items -->
-          <ul class=" flex space-x-8 text-white font-medium">
-            <li><a href="#" class="hover:text-[#89CE14]">About</a></li>
-            <li><a href="#" class="hover:text-[#89CE14]">Services</a></li>
-            <li><a href="#" class="hover:text-[#89CE14]">About Us</a></li>
-            <li><a href="#" class="hover:text-[#89CE14]">Rates</a></li>
-            <li><a href="#" class="hover:text-[#89CE14]">Calculator</a></li>
-            <li><a href="#" class="hover:text-[#89CE14]">Benefits</a></li>
-          </ul>
+      <ul class="flex space-x-8 text-white font-medium">
+        <li><a href="#" class="hover:text-[#89CE14]">About</a></li>
+        <li><a href="#" class="hover:text-[#89CE14]">Services</a></li>
+        <li><a href="#" class="hover:text-[#89CE14]">About Us</a></li>
+        <li><a href="#" class="hover:text-[#89CE14]">Rates</a></li>
+        <li><a href="#" class="hover:text-[#89CE14]">Calculator</a></li>
+        <li><a href="#" class="hover:text-[#89CE14]">Benefits</a></li>
+      </ul>
 
-          <!-- Buttons -->
-          <div class=" flex gap-3">
-            <button class="btn1">Sign Up</button>
-            <button class="btn1">Sign In</button>
-          </div>
-
-          <!-- Mobile Menu Icon -->
-          <button class="hidden text-white text-2xl">
-            <i class="fa-solid fa-bars"></i>
-          </button>
-        </div>
-      </nav>
-
-      <!-- Hero Content -->
-      <div
-        class="max-w-7xl mx-auto flex   gap-14 items-center justify-between text-white px-6 pt-20"
-      >
-        <img src="assets/image/Frame 2147225008.png" alt="" class=" w-12 h-12 " />
-
-        <div class="text-center text-left max-w-lg">
-          <h1 class="text-4xl text-6xl font-bold leading-tight mb-4">
-            Welcome to Swift Express Cargo
-          </h1>
-          <p class="text-lg leading-relaxed mb-6">
-            Lorem ipsum dolor sit amet consectetur. Congue lacinia tempor orci
-            tellus sollicitudin morbi.
-          </p>
-
-          <!-- Tracking Input -->
-          <div
-            class="flex p-1 bg-white/10 border border-green-400 rounded-full overflow-hidden max-w-xl mx-auto "
-          >
-            <input
-              type="text"
-              placeholder="Tracking Number"
-              class="flex-1 bg-transparent text-white placeholder:text-gray-300 px-4 py-3 focus:outline-none"
-            />
-            <button
-              class="bg-gradient-to-r rounded-3xl  from-green-300 to-green-500 hover:from-green-400 hover:to-green-600 text-[#00303d] font-semibold px-6 py-3 transition-all"
-            >
-              Track Now
-            </button>
-          </div>
-        </div>
-
-        <img src="assets/image/Frame 2147225007.png" alt="" class="w-12 h-12" />
+      <div class="flex gap-3">
+        <button class="btn1">Sign Up</button>
+        <button class="btn1">Sign In</button>
       </div>
-    </section>
+    </div>
+  </nav>
 
+  <nav class="md:hidden bg-black/40 py-4 relative">
+    <div class="max-w-7xl mx-auto flex justify-between items-center px-6">
+      <img
+        src="assets/image/plen.svg"
+        alt="Logo"
+        class="w-[100px] h-auto"
+      />
 
-    
+      <button class="text-white text-2xl" onclick="toggleMenu()">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu-container" class="hidden absolute top-full left-0 w-full bg-black/90 z-50 p-4">
+        <ul class="flex flex-col space-y-3 text-white font-medium mb-4">
+            <li><a href="#" class="block text-center hover:text-[#89CE14] py-1">About</a></li>
+            <li><a href="#" class="block text-center hover:text-[#89CE14] py-1">Services</a></li>
+            <li><a href="#" class="block text-center hover:text-[#89CE14] py-1">About Us</a></li>
+            <li><a href="#" class="block text-center hover:text-[#89CE14] py-1">Rates</a></li>
+            <li><a href="#" class="block text-center hover:text-[#89CE14] py-1">Calculator</a></li>
+            <li><a href="#" class="block text-center hover:text-[#89CE14] py-1">Benefits</a></li>
+        </ul>
+
+        <div class="flex flex-col gap-3">
+            <button class="btn1 w-full">Sign Up</button>
+            <button class="btn1 w-full">Sign In</button>
+        </div>
+    </div>
+  </nav>
+
+  <div
+    class="max-w-7xl mx-auto flex flex-col items-center text-white px-6 pt-20 md:flex-row md:justify-between"
+  >
+    <img src="assets/image/Frame 2147225008.png" alt="" class="w-12 h-12 hidden md:block" />
+
+    <div class="text-center max-w-lg md:text-left md:max-w-2xl">
+      <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
+        Welcome to Swift Express Cargo
+      </h1>
+      <p class="text-base sm:text-lg leading-relaxed mb-6">
+        Lorem ipsum dolor sit amet consectetur. Congue lacinia tempor orci
+        tellus sollicitudin morbi.
+      </p>
+
+      <div
+        class="flex p-1 bg-white/10 border border-green-400 rounded-full overflow-hidden max-w-full mx-auto sm:max-w-xl"
+      >
+        <input
+          type="text"
+          placeholder="Tracking Number"
+          class="flex-1 bg-transparent text-white placeholder:text-gray-300 px-4 py-3 focus:outline-none"
+        />
+        <button
+          class="bg-gradient-to-r rounded-3xl from-green-300 to-green-500 hover:from-green-400 hover:to-green-600 text-[#00303d] font-semibold px-6 py-3 transition-all whitespace-nowrap"
+        >
+          Track Now
+        </button>
+      </div>
+    </div>
+
+    <img src="assets/image/Frame 2147225007.png" alt="" class="w-12 h-12 hidden md:block" />
+  </div>
+</section>
+
+    <hr class="my-10 border-gray-300">
+
     <section class="container mt-12">
-      <div class="h-auto w-auto flex  justify-between">
-        <h3 class="text-[36px] font-[700] text-[#333333] leading-[132%]">Popular Brands</h3>
-
-        <div class="flex flex-row gap-x-3">
+      <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+        <h3 class="text-[30px] sm:text-[36px] font-[700] text-[#333333] leading-[132%] mb-4 md:mb-0">Popular Brands</h3>
+        <div class="flex gap-x-3">
           <img src="assets/image/Frame 2147224829.png" alt="" />
-
           <img src="assets/image/Frame 2147224830.png" alt="" />
         </div>
       </div>
-      <div class="flex flex-row h-auto w-auto py-[20px] gap-x-7">
-        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px]">
-          <img src="assets/image/Mask group.png" alt="" />
-          <h4 class="text-[#606060] text-[24px] font-[500] leading-[150%]">Babymel</h4>
+      <div class="flex flex-wrap justify-center py-[20px] gap-4 sm:gap-7">
+        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px] w-5/12 sm:w-auto">
+          <img src="assets/image/Mask group.png" alt="" class="mx-auto" />
+          <h4 class="text-[#606060] text-lg sm:text-[24px] font-[500] leading-[150%]">Babymel</h4>
         </div>
 
-        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px]">
-          <img src="assets/image/Mask group (1).png" alt="" />
-          <h4 class="text-[#606060] text-[24px] font-[500] leading-[150%]">Burberry</h4>
+        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px] w-5/12 sm:w-auto">
+          <img src="assets/image/Mask group (1).png" alt="" class="mx-auto" />
+          <h4 class="text-[#606060] text-lg sm:text-[24px] font-[500] leading-[150%]">Burberry</h4>
         </div>
 
-        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px]">
-          <img src="assets/image/Mask group (2).png" alt="" />
-          <h4 class="text-[#606060] text-[24px] font-[500] leading-[150%]">Camper</h4>
+        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px] w-5/12 sm:w-auto">
+          <img src="assets/image/Mask group (2).png" alt="" class="mx-auto" />
+          <h4 class="text-[#606060] text-lg sm:text-[24px] font-[500] leading-[150%]">Camper</h4>
         </div>
 
-        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px]">
-          <img src="assets/image/Mask group (3).png" alt="" />
-          <h4 class="text-[#606060] text-[24px] font-[500] leading-[150%]">Chanel</h4>
+        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px] w-5/12 sm:w-auto">
+          <img src="assets/image/Mask group (3).png" alt="" class="mx-auto" />
+          <h4 class="text-[#606060] text-lg sm:text-[24px] font-[500] leading-[150%]">Chanel</h4>
         </div>
 
-        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px]">
-          <img src="assets/image/Mask group (4).png" alt="" />
-          <h4 class="text-[#606060] text-[24px] font-[500] leading-[150%]">Fila</h4>
+        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px] w-5/12 sm:w-auto">
+          <img src="assets/image/Mask group (4).png" alt="" class="mx-auto" />
+          <h4 class="text-[#606060] text-lg sm:text-[24px] font-[500] leading-[150%]">Fila</h4>
         </div>
 
-        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px]">
-          <img src="assets/image/Mask group (5).png" alt="" />
-          <h4 class="text-[#606060] text-[24px] font-[500] leading-[150%]">Puma</h4>
+        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px] w-5/12 sm:w-auto">
+          <img src="assets/image/Mask group (5).png" alt="" class="mx-auto" />
+          <h4 class="text-[#606060] text-lg sm:text-[24px] font-[500] leading-[150%]">Puma</h4>
         </div>
 
-        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px]">
-          <img src="assets/image/Mask group (6).png" alt="" />
-          <h4 class="text-[#606060] text-[24px] font-[500] leading-[150%]">Adidas</h4>
+        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px] w-5/12 sm:w-auto">
+          <img src="assets/image/Mask group (6).png" alt="" class="mx-auto" />
+          <h4 class="text-[#606060] text-lg sm:text-[24px] font-[500] leading-[150%]">Adidas</h4>
         </div>
       </div>
     </section>
 
-
+    <hr class="my-10 border-gray-300">
 
     <section class="container py-[20px] bg-gray-200">
       <div class="text-center flex flex-col gap-5">
-        <h1 class="text-[36px] font-[700] text-[#333333] leading-[120%]">Why Choose Us</h1>
-        <p class="text-[18px] font-[300] text-[#606060] pt-[5px] leading-[130%]">
-          Lorem ipsum dolor sit amet consectetur. Congue lacinia temporbr <br>
-           orci tellus sollicitudin morbi. Duis
+        <h1 class="text-[30px] sm:text-[36px] font-[700] text-[#333333] leading-[120%]">Why Choose Us</h1>
+        <p class="text-base sm:text-[18px] font-[300] text-[#606060] pt-[5px] leading-[130%]">
+          Lorem ipsum dolor sit amet consectetur. Congue lacinia temporbr <br class="hidden sm:block">
+          orci tellus sollicitudin morbi. Duis
         </p>
       </div>
-      <div class="flex flex-row mt-16 gap-x-20">
-        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px] w-[265px] h-[185px]">
+      <div class="flex flex-wrap mt-10 justify-center gap-6 md:gap-x-20">
+        <div class="p-4 bg-[#EAEAEA] text-center rounded-[10px] w-full sm:w-[45%] lg:w-[265px] h-auto">
           <img src="assets/image/Frame.svg" class="w-10 h-10 mx-auto" alt="" />
           <h4 class="text-[20px] font-[500] py-[2px] text-[#606060] leading-[130%]">
             Package Consolidation
@@ -169,7 +196,7 @@
             Sagittis eu egestas
           </p>
         </div>
-        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px] w-[265px] h-[185px]">
+        <div class="p-4 bg-[#EAEAEA] text-center rounded-[10px] w-full sm:w-[45%] lg:w-[265px] h-auto">
           <img src="assets/image/Group (3).png" class="w-10 h-10 mx-auto" alt="" />
           <h4 class="text-[20px] font-[500] py-[2px] text-[#606060] leading-[130%]">
             Security & Reliability
@@ -179,7 +206,7 @@
             Sagittis eu egestas
           </p>
         </div>
-        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px] w-[265px] h-[185px]">
+        <div class="p-4 bg-[#EAEAEA] text-center rounded-[10px] w-full sm:w-[45%] lg:w-[265px] h-auto">
           <img src="assets/image/Group (5).png" class="w-10 h-10 mx-auto" alt="" />
           <h4 class="text-[20px] font-[500] py-[2px] text-[#606060] leading-[130%]">
             Real-time Tracking
@@ -189,7 +216,7 @@
             Sagittis eu egestas
           </p>
         </div>
-        <div class="p-3 bg-[#EAEAEA] text-center rounded-[10px] w-[265px] h-[185px]">
+        <div class="p-4 bg-[#EAEAEA] text-center rounded-[10px] w-full sm:w-[45%] lg:w-[265px] h-auto">
           <img src="assets/image/Frame (1).svg" class="w-10 h-10 mx-auto" alt="" />
           <h4 class="text-[20px] font-[500] py-[2px] text-[#606060] leading-[130%]">
             24/7 Support
@@ -202,254 +229,255 @@
       </div>
     </section>
 
-    <!-- work start  -->
+    <hr class="my-10 border-gray-300">
+
     <section class="container my-10">
       <div class="text-center">
-        <h1 class="text-[36px] font-[700] text-[#606060] leading-[150%">How It Work</h1>
-        <p class="text-[18px] font-[300] text-[#606060] py-[2px] leading-[130%]">
+        <h1 class="text-[30px] sm:text-[36px] font-[700] text-[#606060] leading-[150%">How It Work</h1>
+        <p class="text-base sm:text-[18px] font-[300] text-[#606060] py-[2px] leading-[130%]">
           Lorem ipsum dolor sit amet consectetur. Congue lacinia tempor orci tellus sollicitudin
           morbi. Duis
         </p>
       </div>
-
-      <div class="flex flex-row justify-between">
-        <div class="pt-[60px] flex flex-col gap-7">
-          <div class="max-w-[676px] w-full bg-[#EAEAEA] flex gap-5 p-5">
-            <img src="assets/image/Frame 2147224987.png" class="w-20 h-20" alt="" />
-            <div class="">
-              <h4 class="text-[32px] hover:text-[#6DA015] font-[700] leading-[150%]">Prepare</h4>
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+      <div class="flex flex-col lg:flex-row justify-between">
+        <div class="pt-5 lg:pt-[60px] flex flex-col gap-5 lg:gap-7 w-full lg:w-1/2">
+          <div class="bg-[#EAEAEA] flex gap-5 p-5">
+            <img src="assets/image/Frame 2147224987.png" class="w-16 h-16 sm:w-20 sm:h-20" alt="" />
+            <div class="flex-1">
+              <h4 class="text-xl sm:text-[32px] hover:text-[#6DA015] font-[700] leading-[150%]">Prepare</h4>
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%]">
                 Capture the condition of your property before disaster strikes.
               </p>
             </div>
           </div>
 
-          <div class="max-w-[676px] gap-5 bg-[#EAEAEA] w-full flex gap-5 p-5">
-            <img src="assets/image/Frame 2147224987 (1).png" class="w-20 h-20" alt="" />
-            <div class="">
-              <h4 class="text-[32px] hover:text-[#6DA015] font-[700] leading-[150%]">
+          <div class="bg-[#EAEAEA] flex gap-5 p-5">
+            <img src="assets/image/Frame 2147224987 (1).png" class="w-16 h-16 sm:w-20 sm:h-20" alt="" />
+            <div class="flex-1">
+              <h4 class="text-xl sm:text-[32px] hover:text-[#6DA015] font-[700] leading-[150%]">
                 Shop online
               </h4>
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%]">
                 Capture the condition of your property before disaster strikes.
               </p>
             </div>
           </div>
-          <div class="max-w-[676px] w-full bg-[#EAEAEA] flex gap-5 p-5">
-            <img src="assets/image/Frame 2147224987 (2).png" class="w-20 h-20" alt="" />
-            <div class="">
-              <h4 class="text-[32px] hover:text-[#6DA015] font-[700] leading-[150%]">
+
+          <div class="bg-[#EAEAEA] flex gap-5 p-5">
+            <img src="assets/image/Frame 2147224987 (2).png" class="w-16 h-16 sm:w-20 sm:h-20" alt="" />
+            <div class="flex-1">
+              <h4 class="text-xl sm:text-[32px] hover:text-[#6DA015] font-[700] leading-[150%]">
                 Receive or pick up your packages
               </h4>
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%]">
                 Capture the condition of your property before disaster strikes.
               </p>
             </div>
           </div>
-          <div class="max-w-[676px] w-full bg-[#EAEAEA] flex gap-5 p-5">
-            <img src="assets/image/Frame 2147224987 (3).png" class="w-20 h-20" alt="" />
-            <div class="">
-              <h4 class="text-[32px] hover:text-[#6DA015] font-[700] leading-[150%]">
+          <div class="bg-[#EAEAEA] flex gap-5 p-5">
+            <img src="assets/image/Frame 2147224987 (3).png" class="w-16 h-16 sm:w-20 sm:h-20" alt="" />
+            <div class="flex-1">
+              <h4 class="text-xl sm:text-[32px] hover:text-[#6DA015] font-[700] leading-[150%]">
                 Tips for you!
               </h4>
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%]">
                 Capture the condition of your property before disaster strikes.
               </p>
             </div>
           </div>
         </div>
-        <div class="mt-[50px]">
-          <img src="assets/image/image (1).png" alt="" />
+        <div class="mt-8 lg:mt-[50px] w-full lg:w-1/2 flex justify-center">
+          <img src="assets/image/image (1).png" alt="" class="max-w-full h-auto" />
         </div>
       </div>
     </section>
 
+    <hr class="my-10 border-gray-300">
 
     <section class="container ">
       <div class="text-center my-10">
-        <h1 class="text-[32px] text-[#6DA015] font-[700] leading-[150%">
+        <h1 class="text-2xl sm:text-[32px] text-[#6DA015] font-[700] leading-[150%">
           Frequently asked question
         </h1>
-        <p class="text-[#606060] font-normal text-[16px] leading-[130%">
+        <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%">
           Lorem ipsum dolor sit amet consectetur. Congue lacinia tempor orci tellus sollicitudin
           morbi. Duis
         </p>
       </div>
-      <div class="flex flex-row justify-between gap-x-20">
-        <div class="flex flex-col gap-7 w-[50%] py-[30px]">
+      <div class="flex flex-col lg:flex-row justify-between gap-5 lg:gap-x-20">
+        <div class="flex flex-col gap-5 lg:gap-7 w-full lg:w-1/2 py-0 lg:py-[30px]">
           <div class="bg-[#EAEAEA] flex items-center justify-between gap-3 p-5">
-            <div class="">
-              <h4 class="text-[32px] hover:text-[#6DA015] font-[700] leading-[150%]">
+            <div class="flex-1">
+              <h4 class="text-xl sm:text-[24px] hover:text-[#6DA015] font-[700] leading-[150%]">
                 Lorem ipsum dolor sit amet?
               </h4>
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%]">
                 Orthosphere is an AI-powered health assistant offering personalized care, smart
                 doctor consultations, and lab test insights to support your health decisions.
               </p>
             </div>
-            <img src="assets/image/Frame 2147224638.png" class="w-15 h-15" alt="" />
+            <img src="assets/image/Frame 2147224638.png" class="w-10 h-10" alt="" />
           </div>
 
           <div class="bg-[#EAEAEA] flex items-center justify-between gap-3 p-5">
-            <div class="">
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+            <div class="flex-1">
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%] font-semibold">
                 Lorem ipsum dolor sit amet consectetur. Pellentesque vestibulum?
               </p>
             </div>
-            <img src="assets/image/Group 36811.png" class="w-15 h-15" alt="" />
+            <img src="assets/image/Group 36811.png" class="w-10 h-10" alt="" />
           </div>
 
           <div class="bg-[#EAEAEA] flex items-center justify-between gap-3 p-5">
-            <div class="">
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+            <div class="flex-1">
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%] font-semibold">
                 Lorem ipsum dolor sit amet consectetur. Pellentesque vestibulum?
               </p>
             </div>
-            <img src="assets/image/Group 36811.png" class="w-15 h-15" alt="" />
+            <img src="assets/image/Group 36811.png" class="w-10 h-10" alt="" />
           </div>
           <div class="bg-[#EAEAEA] items-center justify-between flex gap-3 p-5">
-            <div class="">
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+            <div class="flex-1">
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%] font-semibold">
                 Lorem ipsum dolor sit amet consectetur. Pellentesque vestibulum?
               </p>
             </div>
-            <img src="assets/image/Group 36811.png" class="w-15 h-15" alt="" />
+            <img src="assets/image/Group 36811.png" class="w-10 h-10" alt="" />
           </div>
         </div>
 
-        <div class="w-[50%] flex flex-col gap-7 py-[30px]">
+        <div class="w-full lg:w-1/2 flex flex-col gap-5 lg:gap-7 py-0 lg:py-[30px]">
           <div class="bg-[#EAEAEA] flex items-center justify-between gap-3 p-5">
-            <div class="">
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+            <div class="flex-1">
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%] font-semibold">
                 Lorem ipsum dolor sit amet?
               </p>
             </div>
-            <img src="assets/image/Group 36811.png" class="w-15 h-15" alt="" />
+            <img src="assets/image/Group 36811.png" class="w-10 h-10" alt="" />
           </div>
 
           <div class="bg-[#EAEAEA] flex items-center justify-between gap-3 p-5">
-            <div class="">
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+            <div class="flex-1">
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%] font-semibold">
                 Lorem ipsum dolor sit amet consectetur. Tempus ornare ut lorem dignissim fringilla?
               </p>
             </div>
-            <img src="assets/image/Group 36811.png" class="w-15 h-15" alt="" />
+            <img src="assets/image/Group 36811.png" class="w-10 h-10" alt="" />
           </div>
 
           <div class="bg-[#EAEAEA] flex gap-3 items-center justify-between p-5">
-            <div class="">
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+            <div class="flex-1">
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%] font-semibold">
                 Lorem ipsum dolor sit amet consectetur?
               </p>
             </div>
-            <img src="assets/image/Group 36811.png" class="w-15 h-15" alt="" />
+            <img src="assets/image/Group 36811.png" class="w-10 h-10" alt="" />
           </div>
           <div class="bg-[#EAEAEA] flex items-center justify-between gap-3 p-5">
-            <div class="">
-              <p class="text-[#606060] font-normal text-[16px] leading-[130%]">
+            <div class="flex-1">
+              <p class="text-[#606060] font-normal text-sm sm:text-[16px] leading-[130%] font-semibold">
                 Lorem ipsum dolor sit amet consectetur. Pretium tortor in eros?
               </p>
             </div>
-            <img src="assets/image/Group 36811.png" class="w-15 h-15" alt="" />
+            <img src="assets/image/Group 36811.png" class="w-10 h-10" alt="" />
           </div>
         </div>
       </div>
     </section>
 
+    <hr class="my-10 border-gray-300">
 
-    <!-- blog start  -->
-    <section class="container my-9 bg-gray-200 p-8">
-      <h1 class="text-[36px] font-[700] text-[#333333] leading-[150%]">Our Blog</h1>
-
-      <div class="h-auto w-auto flex flex-row justify-between">
-        <p class="text-[18px] w-auto font-[300] text-[#606060] leading-[130%]">
+    <section class="container my-9 bg-gray-200 p-4 sm:p-8">
+      <h1 class="text-[30px] sm:text-[36px] font-[700] text-[#333333] leading-[150%]">Our Blog</h1>
+      <div class="flex flex-col md:flex-row justify-between items-center py-5">
+        <p class="text-base sm:text-[18px] w-auto font-[300] text-[#606060] leading-[130%] mb-4 md:mb-0">
           Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-          <br />
+          <br class="hidden sm:block" />
           been the industry's standard dummy text ever since the 1500s
         </p>
 
-        <div class="flex flex-row gap-x-3">
+        <div class="flex gap-x-3">
           <button
-            class="h-auto w-auto py-3 px-[40.5px] text-[#89CE14] bg-transparent border-1 border ease-in-out duration-500 rounded-full hover:border-solid border-[#89CE14] hover:text-white hover:bg-[#89CE14] cursor-pointer text-base font-[590]">View All</button>
+            class="h-auto w-auto py-3 px-8 text-[#89CE14] bg-transparent border-1 border ease-in-out duration-500 rounded-full hover:border-solid border-[#89CE14] hover:text-white hover:bg-[#89CE14] cursor-pointer text-base font-[590]">View All</button>
         </div>
       </div>
-      <div class="flex flex-row justify-between gap-x-20 items-center py-8 ">
-        <article class="w-[350px] h-auto rounded-[8px] shadow-md">
+      <div class="flex flex-wrap justify-center gap-6 lg:gap-x-20 items-center py-8">
+        <article class="w-full sm:w-[45%] lg:w-[30%] h-auto rounded-[8px] shadow-md">
           <div class="overflow-hidden shadow-lg">
             <img
               src="assets/image/Rectangle 2041.png"
               alt="Consultation"
-              class="w-[424px] object-cover rounded-[8px]"
+              class="w-full object-cover rounded-[8px]"
             />
           </div>
 
-          <div class="text-center">
-            <h3 class="text-[25px] font-[700] text-[#555555] leading-[100%] mt-[7px]">
+          <div class="text-center p-4">
+            <h3 class="text-xl sm:text-[25px] font-[700] text-[#555555] leading-[100%] mt-[7px]">
               Initial Consultation
             </h3>
 
-            <p class="text-[16px] font-[400] text-[#606060] mt-[8px]">
+            <p class="text-sm sm:text-[16px] font-[400] text-[#606060] mt-[8px]">
               Schedule a meeting with our experienced legal team to discuss your case and understand
               your needs.
             </p>
 
             <a
               href="#"
-              class="inline-block px-8 py-3 mt-[10px] rounded-full bg-gradient-to-r from-green-600 to-green-400 text-white font-semibold shadow hover:scale-105 transform transition -mb-14 "
+              class="inline-block px-8 py-3 mt-[20px] rounded-full bg-gradient-to-r from-green-600 to-green-400 text-white font-semibold shadow hover:scale-105 transform transition"
             >
               READ MORE
             </a>
           </div>
         </article>
-        <article class="w-[350px] h-auto rounded-[8px] shadow-md">
+        <article class="w-full sm:w-[45%] lg:w-[30%] h-auto rounded-[8px] shadow-md">
           <div class="overflow-hidden">
             <img
               src="assets/image/Rectangle 2042.png"
               alt="Consultation"
-              class="w-[424px] object-cover rounded-[8px]"
+              class="w-full object-cover rounded-[8px]"
             />
           </div>
 
-          <div class="text-center">
-            <h3 class="text-[25px] font-[700] text-[#555555] leading-[100%] mt-[7px]">
+          <div class="text-center p-4">
+            <h3 class="text-xl sm:text-[25px] font-[700] text-[#555555] leading-[100%] mt-[7px]">
               Initial Consultation
             </h3>
 
-            <p class="text-[16px] font-[400] text-[#606060] mt-[8px]">
+            <p class="text-sm sm:text-[16px] font-[400] text-[#606060] mt-[8px]">
               Schedule a meeting with our experienced legal team to discuss your case and understand
               your needs.
             </p>
 
             <a
               href="#"
-              class="inline-block px-8 py-3 mt-[10px] rounded-full bg-gradient-to-r from-green-600 to-green-400 text-white font-semibold shadow hover:scale-105 transform transition -mb-14 "
+              class="inline-block px-8 py-3 mt-[20px] rounded-full bg-gradient-to-r from-green-600 to-green-400 text-white font-semibold shadow hover:scale-105 transform transition"
             >
               READ MORE
             </a>
           </div>
         </article>
-        <article class="w-[350px] h-auto rounded-[8px] shadow-md">
+        <article class="w-full sm:w-[45%] lg:w-[30%] h-auto rounded-[8px] shadow-md">
           <div class="overflow-hidden">
             <img
               src="assets/image/Rectangle 2042 (1).png"
               alt="Consultation"
-              class="w-[424px] object-cover rounded-[8px]"
+              class="w-full object-cover rounded-[8px]"
             />
           </div>
 
-          <div class="text-center">
-            <h3 class="text-[25px] font-[700] text-[#555555] leading-[100%] mt-[7px]">
+          <div class="text-center p-4">
+            <h3 class="text-xl sm:text-[25px] font-[700] text-[#555555] leading-[100%] mt-[7px]">
               Initial Consultation
             </h3>
 
-            <p class="text-[16px] font-[400] text-[#606060] mt-[8px]">
+            <p class="text-sm sm:text-[16px] font-[400] text-[#606060] mt-[8px]">
               Schedule a meeting with our experienced legal team to discuss your case and understand
               your needs.
             </p>
 
             <a
               href="#"
-              class="inline-block px-8 py-3 mt-[10px] rounded-full bg-gradient-to-r from-green-600 to-green-400 text-white font-semibold shadow hover:scale-105 transform transition -mb-14 "
+              class="inline-block px-8 py-3 mt-[20px] rounded-full bg-gradient-to-r from-green-600 to-green-400 text-white font-semibold shadow hover:scale-105 transform transition"
             >
               READ MORE
             </a>
@@ -458,216 +486,198 @@
       </div>
     </section>
 
+    <hr class="my-10 border-gray-300">
 
+    <section class="py-10">
+      <div class="container">
+        <h1 class="text-[30px] sm:text-[36px] font-[700] leading-[150%] text-[#333333]">Our Customer Feedback</h1>
+        <div class="flex flex-col md:flex-row justify-between items-center py-5">
+          <p class="text-base sm:text-[17px] font-[300] max-w-full md:max-w-[600px] text-[#606060] leading-[130%] mb-4 md:mb-0">
+            Lorem Ipsum is simply dummy 
+            text of the printing and
+            typesetting industry. Lorem Ipsum has 
+            been the industry's standard dummy text ever
+          </p>
 
-<section class=" py-30">
-  <div class="container">
-    <h1 class="text-[36px] font-[700] leading-[150%] text-[#333333]">Our Customer Feedback</h1>
-     <div class="h-auto w-auto flex flex-row justify-between py-5">
-        <p class="text-[17px] font-[300] max-w-[600px] text-[#606060] leading-[130%]">
-          Lorem Ipsum is simply dummy 
-          text of the printing and
-           typesetting industry. Lorem Ipsum has 
-           been the industry's standard dummy text ever</p>
-
-        <div class="flex flex-row gap-x-3">
-          <img src="assets/image/Frame 2147224829.png" alt="" />
-
-          <img src="assets/image/Frame 2147224830.png" alt="" />
+          <div class="flex gap-x-3">
+            <img src="assets/image/Frame 2147224829.png" alt="" />
+            <img src="assets/image/Frame 2147224830.png" alt="" />
+          </div>
         </div>
-  </div>
+        <div class="flex flex-wrap justify-center gap-6 lg:gap-x-20">
+          <div class="p-4 h-auto w-full sm:w-[45%] lg:w-[30%] bg-secondary-white shadow-md rounded-lg">
+            <div class="flex items-center justify-between">
+              <div><img src="assets/image/Frame 2147224199.png" alt=""></div>
+              <div class="text-[#46C0A2] text-sm sm:text-base">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+            
+            <h4 class="text-[#555555] py-2 text-[20px] font-[600]">Floyd Miles</h4>
+            <p class="text-sm sm:text-[18px] font-[400] py-2 leading-[150%]">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
+              Velit officia consequat duis enim velit mollit. </p>
+          </div>
 
+          <div class="p-4 h-auto w-full sm:w-[45%] lg:w-[30%] bg-secondary-white shadow-md rounded-lg">
+            <div class="flex items-center justify-between">
+              <div><img src="assets/image/Rectangle 729.png" alt=""></div>
+              <div class="text-[#46C0A2] text-sm sm:text-base">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+            
+            <h4 class="text-[#555555] py-2 text-[20px] font-[600]">Ronald Richards</h4>
+            <p class="text-sm sm:text-[18px] font-[400] py-2 leading-[150%]">ullamco est sit aliqua dolor do amet sint. 
+              Velit officia consequat duis 
+              enim velit mollit. Exercitation veniam consequat sunt nostrud amet. </p>
+          </div>
 
-<div class="flex flex-row justify-between gap-x-20">
-<div class=" p-4  h-auto w-[429px] bg-secondary-white">
-<div class="flex flex-row items-center justify-between">
-<div><img src="assets/image/Frame 2147224199.png" alt=""></div>
-  <div class="text-[#46C0A2]">
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star-half-stroke"></i>
-    <i class="fa-regular fa-star"></i>
+          <div class="p-4 h-auto w-full sm:w-[45%] lg:w-[30%] bg-secondary-white shadow-md rounded-lg">
+            <div class="flex items-center justify-between">
+              <div><img src="assets/image/Frame 2147224201.png" alt=""></div>
+              <div class="text-[#46C0A2] text-sm sm:text-base">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+            </div>
+            
+            <h4 class="text-[#555555] py-2 text-[20px] font-[600]">Savannah Nguyen</h4>
+            <p class="text-sm sm:text-[18px] font-[400] py-2 leading-[150%]">
+              Amet minim mollit non deserunt ullamco est sit aliqua dolor do 
+              amet sint. Velit officia consequat. </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  </div>
-</div>
-  
-  <h4 class="text-[#555555] py-2 text-[20px] font-[600]">Floyd Miles</h4>
-  <p class="text-[18px] font-[400] py-2 leading-[150%]">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. 
-    Velit officia consequat duis enim velit mollit. </p>
-</div>
-
-
-
-
-<div class=" p-4  h-auto w-[429px] bg-secondary-white">
-<div class="flex flex-row items-center justify-between">
-<div><img src="assets/image/Rectangle 729.png" alt=""></div>
-  <div class="text-[#46C0A2]">
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-     <i class="fa-solid fa-star"></i>
-    
-    <i class="fa-regular fa-star"></i>
-
-  </div>
-</div>
-  
-  <h4 class="text-[#555555] py-2 text-[20px] font-[600]">Ronald Richards</h4>
-  <p class="text-[18px] font-[400] py-2 leading-[150%]">ullamco est sit aliqua dolor do amet sint. 
-    Velit officia consequat duis 
-    enim velit mollit. Exercitation veniam consequat sunt nostrud amet. </p>
-</div>
-
-
-
-<div class=" p-4  h-auto w-[429px] bg-secondary-white">
-<div class="flex flex-row items-center justify-between">
-<div><img src="assets/image/Frame 2147224201.png" alt=""></div>
-  <div class="text-[#46C0A2]">
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star"></i>
-    <i class="fa-solid fa-star-half-stroke"></i>
-    <i class="fa-solid fa-star-half-stroke"></i>
-    
-
-  </div>
-</div>
-  
-  <h4 class="text-[#555555] py-2 text-[20px] font-[600]">Savannah Nguyen</h4>
-  <p class="text-[18px] font-[400] py-2 leading-[150%]">
-    Amet minim mollit non deserunt ullamco est sit aliqua dolor do 
-    amet sint. Velit officia consequat. </p>
-</div>
-</div>
-
-
-
-
-
-
-   </div>
-</section>
-
+    <hr class="my-10 border-gray-300">
 
     <section class="container mt-10 pb-20">
-      <div class="py-30 text-center h-auto w-auto bg-[#6DA015] rounded-[20px]">
-        <h1 class="text-[36px] text-white font-[700]">Hassle-Free Shipping, Every Time</h1>
-        <p class="text-[16px] text-[#FFFFFF] font-[400] leading-[150%]">
+      <div class="py-10 sm:py-20 text-center h-auto w-auto bg-[#6DA015] rounded-[20px] p-5">
+        <h1 class="text-2xl sm:text-[36px] text-white font-[700]">Hassle-Free Shipping, Every Time</h1>
+        <p class="text-sm sm:text-[16px] text-[#FFFFFF] font-[400] leading-[150%] mt-3">
           Inscreva-se em nossa newsletter e tenha acesso exclusivo a conteúdos educacionais, dicas
-          de <br />
+          de <br class="hidden sm:block" />
           aprendizado de idiomas, atualizações sobre novos cursos e promoções especiais.
         </p>
         <button
-          class="text-white bg-[#0B2A77] mt-10 text-[#00303d] font-semibold px-6 py-3 rounded-full text-lg transition-all"
+          class="text-white bg-[#0B2A77] mt-5 sm:mt-10 font-semibold px-6 py-3 rounded-full text-base sm:text-lg transition-all"
         >
-          Subscrube
+          Subscribe
         </button>
       </div>
     </section>
 
- <!-------footer-start------>
-    <footer class=" bg-[#0B2A77] h-auto w-auto">
+    <footer class=" bg-[#0B2A77] h-auto w-full">
       <div class="container">
-   <div class="flex flex-row py-[25px] gap-x-20">
-        <div class="w-1/4">
-          <img src="assets/image/plen.svg" alt="" />
-          <p class="text-[16px] text-[#FFFFFF] max-w-[449px] py-[5px] pb-[30px] leading-[150%]">
-            Lorem ipsum dolor sit amet consectetur. Neque consequat tristique bibendum facilisis
-            odio congue enim. Tempor justo proin faucibus praesent ac. Dui nunc sit aliquam eget
-            adipiscing feugiat turpis. Ut eleifend blandit suspendisse sollicitudin amet dictum
-            mauris.
-          </p>
-        </div>
-        <div class="flex flex-row justify-between w-3/4">
-          <div class="">
-            <h3 class="text-[#6DA015] font-[700] text-[18]">Support</h3>
-
-            <li class="text-[#FAFAFB] py-3 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> FAQ</a>
-            </li>
-            <li class="text-[#FAFAFB] py-2 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> Return & Exchange</a>
-            </li>
-            <li class="text-[#FAFAFB] py-2 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> Shipping</a>
-            </li>
-            <li class="text-[#FAFAFB] py-2 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> Brand</a>
-            </li>
-            <li class="text-[#FAFAFB] py-2 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> Review</a>
-            </li>
-            <li class="text-[#FAFAFB] py-2 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> Help</a>
-            </li>
+        <div class="flex flex-col lg:flex-row py-8 lg:py-[25px] gap-8 lg:gap-x-20">
+          <div class="w-full lg:w-1/4">
+            <img src="assets/image/plen.svg" alt="" class="w-[100px] h-auto mb-4" />
+            <p class="text-sm sm:text-[16px] text-[#FFFFFF] max-w-full py-2 pb-5 leading-[150%]">
+              Lorem ipsum dolor sit amet consectetur. Neque consequat tristique bibendum facilisis
+              odio congue enim. Tempor justo proin faucibus praesent ac. Dui nunc sit aliquam eget
+              adipiscing feugiat turpis. Ut eleifend blandit suspendisse sollicitudin amet dictum
+              mauris.
+            </p>
           </div>
+          <div class="flex flex-wrap justify-between w-full lg:w-3/4 gap-8">
+            <div class="w-full sm:w-[45%] lg:w-auto">
+              <h3 class="text-[#6DA015] font-[700] text-[18px] mb-3">Support</h3>
+              <ul>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> FAQ</a>
+                </li>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> Return & Exchange</a>
+                </li>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> Shipping</a>
+                </li>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> Brand</a>
+                </li>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> Review</a>
+                </li>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> Help</a>
+                </li>
+              </ul>
+            </div>
 
-          <div class="">
-            <h3 class="text-[#6DA015] font-[700] text-[18]">Company</h3>
+            <div class="w-full sm:w-[45%] lg:w-auto">
+              <h3 class="text-[#6DA015] font-[700] text-[18px] mb-3">Company</h3>
+              <ul>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> Service</a>
+                </li>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> Restricted Items</a>
+                </li>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> Terms & Conditions</a>
+                </li>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> Privacy Policy</a>
+                </li>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> Blog</a>
+                </li>
+                <li class="text-[#FAFAFB] py-1 text-[16px] leading-[150%] font-[300] list-none">
+                  <a href="#"> Contact Us</a>
+                </li>
+              </ul>
+            </div>
 
-            <li class="text-[#FAFAFB] py-3 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> Service</a>
-            </li>
-            <li class="text-[#FAFAFB] py-2 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> Restricted Items</a>
-            </li>
-            <li class="text-[#FAFAFB] py-2 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> Terms & Conditions</a>
-            </li>
-            <li class="text-[#FAFAFB] py-2 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> Privacy Policy</a>
-            </li>
-            <li class="text-[#FAFAFB] py-2 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> Blog</a>
-            </li>
-            <li class="text-[#FAFAFB] py-2 text-[16px] leading-[150%] font-[300] list-none">
-              <a href="#"> Contact Us</a>
-            </li>
-          </div>
-
-          <div class="">
-            <h3 class="text-[#6DA015] font-[700] text-[18px]">Join a Newsletter</h3>
-            <label class="text-[#FAFAFB] pt-3 font-[300] text-[16px] leading-[150%]"
-              >Your Email</label
-            >
-
-            <div class="h-auto flex items-center justify-center to-[#00303d] py-10">
-              <div
-                class="flex items-center bg-white/10 border-2 border-green-400 p-1 rounded-full overflow-hidden shadow-lg"
+            <div class="w-full lg:w-auto">
+              <h3 class="text-[#6DA015] font-[700] text-[18px]">Join a Newsletter</h3>
+              <label class="text-[#FAFAFB] pt-3 font-[300] text-[16px] leading-[150%]"
+                >Your Email</label
               >
-                <input
-                  type="text"
-                  placeholder=" Your email address "
-                  class="w-auto bg-transparent text-white placeholder:text-teal-200 text-lg focus:outline-none"
-                />
-                <button
-                  class="bg-gradient-to-r from-green-300 to-green-500 hover:from-green-400 hover:to-green-600 text-[#00303d] font-semibold px-6 py-3 rounded-30 text-lg rounded-3xl transition-all"
+
+              <div class="h-auto flex items-center justify-start lg:justify-center py-5">
+                <div
+                  class="flex items-center bg-white/10 border-2 border-green-400 p-1 rounded-full overflow-hidden shadow-lg w-full"
                 >
-                  Subscrube
-                </button>
+                  <input
+                    type="text"
+                    placeholder=" Your email address "
+                    class="flex-1 bg-transparent text-white placeholder:text-teal-200 text-sm sm:text-lg focus:outline-none px-3"
+                  />
+                  <button
+                    class="bg-gradient-to-r from-green-300 to-green-500 hover:from-green-400 hover:to-green-600 text-[#00303d] font-semibold px-4 py-2 sm:px-6 sm:py-3 rounded-3xl text-sm sm:text-lg transition-all whitespace-nowrap"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </div>
+
+              <div class="text-[#6DA015] flex gap-x-5 text-2xl">
+                <div> <i class="fa-brands fa-facebook"></i></div>
+                <div><i class="fa-brands fa-instagram"></i></div>
+                <div> <i class="fa-brands fa-twitter"></i></div>
               </div>
             </div>
-
-            <div class="text-[#6DA015] flex flex-row gap-x-5 ">
-              <div> <i class="fa-brands fa-facebook   "></i></div>
-             <div><i class="fa-brands fa-instagram"></i></div>
-              <div> <i class="fa-brands fa-twitter"></i></div>
-             
-            </div>
           </div>
         </div>
       </div>
-      </div>
-   
-      <div class="text-center bg-blue-500/50 z-50  h-[64px p-5">
-        <h4 class="text-[#FFFFFF] text-[16px] font-[100]">
+      <div class="text-center bg-blue-500/50 p-4">
+        <h4 class="text-[#FFFFFF] text-sm sm:text-[16px] font-[100]">
           © Mahbub Alam 2025, All Rights Reserved
         </h4>
       </div>
     </footer>
-    <!-- footer end---->
-  </body>
+    </body>
+    <script src="shipping.js"></script>
 </html>
